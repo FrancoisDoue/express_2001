@@ -5,6 +5,7 @@ export default {
     getAllBooks: (_req, res) => {
         bookModel.getBooks((err, datas) => {
             if (err) return res.status(500).json(err)
+            if (!datas.length) return res.status(404).json({message: "Books not found"})
             return res.json(datas.map(bookMap.bookMapAll))
         })
     },
@@ -12,6 +13,7 @@ export default {
     getBook: (req, res) => {
         bookModel.getBookById(req.params.id, (err, datas) => {
             if (err) return res.status(500).json(err)
+            if (!datas.length) return res.status(404).json({message: "Book not found"})
             return res.json(datas.map(bookMap.bookMap))
         })
     },
