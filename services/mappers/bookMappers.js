@@ -12,8 +12,4 @@ const bookMapAll = (book) => {
     }
 }
 
-const addBookMap = (body) => {
-    return [body.titre, body.auteur, body.annee_publication]
-}
-
-export default { bookMap, bookMapAll, addBookMap }
+export default { bookMap, bookMapAll }

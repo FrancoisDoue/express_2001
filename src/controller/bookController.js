@@ -19,7 +19,7 @@ export default {
     },
 
     addNewBook: (req, res) => {
-        const body = bookMap.addBookMap(req.body)
+        const body = req.body
         bookModel.addBook(body, (err, response) => {
             if (err) return res.status(500).json(err)
             return res.status(201).json(response)

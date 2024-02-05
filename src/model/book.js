@@ -11,7 +11,7 @@ export default {
     },
 
     addBook: (value, cb) => {
-        db.query('INSERT INTO livres (titre, auteur, annee_publication) VALUES (?,?,?)', value, cb)
+        db.query('INSERT INTO livres (titre, auteur, annee_publication) VALUES (?)', value, cb)
     },
 
     updateBook: (id, value, cb) => {
