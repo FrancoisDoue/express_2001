@@ -15,7 +15,7 @@ export default {
     },
 
     updateBook: (id, value, cb) => {
-        db.query('UPDATE livres SET titre= ?, auteur= ?, annee_publication= ? WHERE  id = ?', [...value, id], cb)
+        db.query('UPDATE livres SET ? WHERE  id = ?', [value, id], cb)
     },
     
     deleteBook: (id, cb) => {

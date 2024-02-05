@@ -27,7 +27,7 @@ export default {
     },
 
     updateBook: (req, res) => {
-        bookModel.updateBook(req.params.id, bookMap.addBookMap(req.body), (err, datas) => {
+        bookModel.updateBook(req.params.id, req.body, (err, datas) => {
             // la lisibilité c'est important...
             return err ? res.status(500).json(err) : res.status(201).json({datas, result: req.body})
         })
